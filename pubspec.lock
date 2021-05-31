@@ -4,18 +4,16 @@ packages:
   kernel:
     dependency: "direct dev"
     description:
-      path: "pkg/kernel"
-      ref: "stable/v1.22.5"
-      resolved-ref: "6cb1e943fbc9543221585abfe11b9d1fbfc6d401"
-      url: "git@github.com:alibaba-flutter/sdk.git"
-    source: git
+      path: "/Users/wenxuemao/custom/flutter/xianyuDartSdk/sdk/pkg/kernel"
+      relative: false
+    source: path
     version: "0.0.0"
   meta:
     dependency: transitive
     description:
       name: meta
-      url: "https://pub.flutter-io.cn"
+      url: "https://pubdart.fuyoukache.com"
     source: hosted
-    version: "1.2.4"
+    version: "1.2.3"
 sdks:
   dart: ">=2.3.0-dev.68.0 <3.0.0"

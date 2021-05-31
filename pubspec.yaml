@@ -11,10 +11,7 @@ dev_dependencies:
 
 dependency_overrides:
   kernel:
-    git:
-      url: git@github.com:alibaba-flutter/sdk.git
-      ref: stable/v1.22.5
-      path: pkg/kernel
+    path: /Users/wenxuemao/custom/flutter/xianyuDartSdk/sdk/pkg/kernel
 
 
 # For information on the generic Dart part of this file, see the
