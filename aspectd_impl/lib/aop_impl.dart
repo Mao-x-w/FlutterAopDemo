@@ -1,6 +1,6 @@
 import 'package:aspectd/aspectd.dart';
 
-@Aspect()
+// @Aspect()
 @pragma("vm:entry-point")
 class RegularCallDemo {
   @pragma("vm:entry-point")
@@ -71,8 +71,9 @@ class RegularExecuteDemo {
   @Execute("dart:math", "Random", "-next.*", isRegex: true)
   @pragma("vm:entry-point")
   static dynamic randomNext(PointCut pointcut) {
+    dynamic obj = pointcut.proceed();
     print('[KWLM22]:randomNext!');
-    return 10;
+    return obj;
   }
 }
 
@@ -92,18 +93,6 @@ class RegexExecuteDemo {
  }
 }
 
-// @Aspect()
-// @pragma('vm:entry-point')
-// class RegexExecuteDemo {
-//   @pragma('vm:entry-point')
-//   RegexExecuteDemo();
-//
-//   @Execute("package:flutter/src/gestures/recognizer.dart","GestureRecognizer","-invokeCallback")
-//   @pragma("vm:entry-point")
-//   dynamic hookInvokeCallback(PointCut pointCut){
-//     print('Aspectd41');
-//   }
-// }
 
 @Aspect()
 @pragma("vm:entry-point")
