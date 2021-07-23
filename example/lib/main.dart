@@ -1,7 +1,11 @@
+import 'package:example/route_helper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lifecycle_detect/lifecycle_detect.dart';
 
 void main() {
   runApp(MyApp());
+  LifecycleDetect.getInstance().init();
 }
 
 class MyApp extends StatelessWidget {
@@ -9,12 +13,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
+        // routes: RouteHelper.routes,
+        onGenerateRoute: (RouteSettings settings) {
+          print("onGenerateRoute+++++++");
+          return MaterialPageRoute<dynamic>(
+              builder: (BuildContext context){
+                print("builder+++++++");
+                return RouteHelper.routes[settings.name](context);
+              },
+              settings: settings);
+        }
+
     );
   }
 }
@@ -28,6 +43,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  void initState() {
+    super.initState();
+    LifecycleDetect.getInstance().addLifecycleObserver(LifecycleObserver(
+      onResume: (String pageName,bool isNative){
+        print('LifecycleDetect=======onResume:::pageName:$pageName   isNative:$isNative');
+      },
+      onPause: (String pageName,bool isNative){
+        print('LifecycleDetect=======onPause:::pageName:$pageName   isNative:$isNative');
+      },
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(fontSize: 20),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, RouteHelper.firstPage);
+              },
             ),
             FlatButton(
                 onPressed: () {},
