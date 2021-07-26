@@ -36,8 +36,6 @@ class HookImpl {
   Widget _buildPageWidget;
   BuildContext _buildPageContext;
 
-  PageEvent _previousPageEvent;
-  String _pageWidget;
   var _routePageMap = <Route, PageEvent>{};
 
   void hookHitTest(HitTestEntry entry, PointerEvent event) {
@@ -239,39 +237,17 @@ class HookImpl {
   void handleDrawFrame() {
     if(_popRoute!= null && _popPreviousRoot!=null){
       LifecycleDetect.getInstance().onResume(_popPreviousRoot.settings.name, false);
-      dealAfterPop(_popRoute, _popPreviousRoot);
+      _resetField();
       _popRoute = null;
       _popPreviousRoot = null;
       this._buildPageRoute = null;
-    }
-
-    if (_buildPageContext == null || _targetRoute == null) {
       return;
     }
 
-    LifecycleDetect.getInstance().onResume(_targetRoute.settings.name, false);
-
-    _previousPageEvent = null;
-    _pageWidget = null;
-    PageEvent pageEvent = PageEvent();
-    if (_buildPageWidget is _CustomHasCreationLocation) {
-      _CustomHasCreationLocation location =
-          _buildPageWidget as _CustomHasCreationLocation;
-      print("====buildPage location===${location._customLocation}");
-      if (location._customLocation?.file != null) {
-        pageEvent.fileName = location._customLocation.file
-            .replaceAll(location._customLocation.rootUrl, "");
-      }
+    if (_buildPageContext != null && _targetRoute != null) {
+      LifecycleDetect.getInstance().onResume(_targetRoute.settings.name, false);
+      _resetField();
     }
-
-    pageEvent.routeName = _buildPageRoute?.settings?.name;
-    pageEvent.widgetName = _buildPageWidget?.runtimeType.toString();
-
-    _previousPageEvent = pageEvent;
-    CustomLog.i("handleDrawFrame=====${pageEvent.toString()}");
-
-    _routePageMap[_targetRoute] = pageEvent;
-    _resetField();
   }
 
   void _resetField() {
@@ -287,16 +263,6 @@ class HookImpl {
       _popRoute = route;
       _popPreviousRoot = previousRoute;
       LifecycleDetect.getInstance().onPause(route.settings.name, false);
-    }
-  }
-
-  void dealAfterPop(PageRoute route, Route previousRoute) {
-    _routePageMap.remove(route);
-    PageEvent pageEvent = _routePageMap[previousRoute];
-    if (pageEvent != null) {
-      _previousPageEvent = pageEvent;
-      CustomLog.i("handlePop=====pageEvent:${pageEvent.toString()}");
-      _resetField();
     }
   }
 
