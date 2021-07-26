@@ -16,7 +16,7 @@ class SecondPageState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("first page"),
+        title: Text("second page"),
       ),
       body: Column(
         children: <Widget>[
