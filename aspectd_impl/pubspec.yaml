@@ -14,6 +14,8 @@ dependencies:
     path: ../
   example:
     path: ../example
+  lifecycle_detect:
+    path: ../lifecycle_detect
 
 dev_dependencies:
   flutter_test:

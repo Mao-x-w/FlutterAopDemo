@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf160ed5-63b4-444f-b3b2-da514735bf6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../aspectd_impl/lib/display_aop_hook.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../example/lib/FirstPage.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../example/lib/SecondPage.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../example/lib/route_helper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aspectd_impl/lib/aop_impl.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aspectd_impl/lib/aspectd_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../aspectd_impl/lib/aspectd_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aspectd_impl/lib/hook_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../aspectd_impl/lib/hook_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aspectd_impl/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../aspectd_impl/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aspectd_impl/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../aspectd_impl/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../example/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/../example/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/app/src/main/java/com/aspectd/example/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../example/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/.last_build_id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/Flutter.podspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/ios/Runner/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/lib/main111.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../example/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1vhTbnv2qnGmychLPUOSGr7rnML" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter.example/lib/main.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf160ed5-63b4-444f-b3b2-da514735bf6e" name="Default Changelist" comment="" />
+      <created>1627013431755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627013431755</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1228" height="276" key="GridCell.Tab.0.bottom" timestamp="1627026979091">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1228" height="276" key="GridCell.Tab.0.bottom/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627026979091" />
+    <state width="1228" height="276" key="GridCell.Tab.0.center" timestamp="1627026979090">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1228" height="276" key="GridCell.Tab.0.center/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627026979090" />
+    <state width="1228" height="276" key="GridCell.Tab.0.left" timestamp="1627026979088">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1228" height="276" key="GridCell.Tab.0.left/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627026979088" />
+    <state width="1228" height="276" key="GridCell.Tab.0.right" timestamp="1627026979091">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1228" height="276" key="GridCell.Tab.0.right/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627026979091" />
+    <state x="32" y="25" key="SettingsEditor" timestamp="1627019640477">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="32" y="25" key="SettingsEditor/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627019640477" />
+    <state width="375" height="74" key="javadoc.popup.new" timestamp="1627026462424">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="375" height="74" key="javadoc.popup.new/0.25.1280.775/1280.-194.1920.1055@0.25.1280.775" timestamp="1627026462424" />
+  </component>
+</project>

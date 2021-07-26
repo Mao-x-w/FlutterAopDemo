@@ -5,6 +5,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:lifecycle_detect/lifecycle_detect.dart';
+
 @pragma("vm:entry-point")
 class HookImpl {
   static final _instance = HookImpl._();
@@ -26,6 +28,15 @@ class HookImpl {
   var elementPathList = <Element>[];
 
   List<String> contentList = [];
+
+  Route _targetRoute;
+  Route _popRoute;
+  Route _popPreviousRoot;
+  Route _buildPageRoute;
+  Widget _buildPageWidget;
+  BuildContext _buildPageContext;
+
+  var _routePageMap = <Route, PageEvent>{};
 
   void hookHitTest(HitTestEntry entry, PointerEvent event) {
     hitTestEntry = entry;
@@ -202,6 +213,70 @@ class HookImpl {
         "=========================================================================================";
     CustomLog.i(result);
   }
+
+  void handlePush(Route route, Route previousRoute) {
+    CustomLog.i("handlePush====route:$route    previousRoute:$previousRoute");
+    if (route is PageRoute) {
+      _targetRoute = route;
+    }
+    if(previousRoute != null){
+      LifecycleDetect.getInstance().onPause(previousRoute.settings.name, false);
+    }
+  }
+
+  void buildPage(Route<dynamic> route, Widget widget, BuildContext context) {
+    if (_targetRoute == null) {
+      return;
+    }
+    _buildPageRoute = route;
+    _buildPageWidget = widget;
+    _buildPageContext = context;
+    CustomLog.i("buildPage====route:$route  widget:$widget  context:$context");
+  }
+
+  void handleDrawFrame() {
+    if(_popRoute!= null && _popPreviousRoot!=null){
+      LifecycleDetect.getInstance().onResume(_popPreviousRoot.settings.name, false);
+      _resetField();
+      _popRoute = null;
+      _popPreviousRoot = null;
+      this._buildPageRoute = null;
+      return;
+    }
+
+    if (_buildPageContext != null && _targetRoute != null) {
+      LifecycleDetect.getInstance().onResume(_targetRoute.settings.name, false);
+      _resetField();
+    }
+  }
+
+  void _resetField() {
+    this._targetRoute = null;
+    this._buildPageWidget = null;
+    this._buildPageContext = null;
+    contentList.clear();
+  }
+
+  void handlePop(Route route, Route previousRoute) {
+    CustomLog.i("handlePop====route:$route  previousRoute:$previousRoute");
+    if (route is PageRoute) {
+      _popRoute = route;
+      _popPreviousRoot = previousRoute;
+      LifecycleDetect.getInstance().onPause(route.settings.name, false);
+    }
+  }
+
+  void onActivityResumed() {
+    if(_buildPageRoute!=null){
+      LifecycleDetect.getInstance().onResume(_buildPageRoute.settings.name, true);
+    }
+  }
+
+  void onActivityPaused() {
+    if(_buildPageRoute!=null){
+      LifecycleDetect.getInstance().onPause(_buildPageRoute.settings.name, true);
+    }
+  }
 }
 
 ///Location Part
@@ -238,6 +313,20 @@ class _CustomLocation {
   @override
   String toString() {
     return '_CustomLocation{rootUrl: $rootUrl, file: $file, line: $line, column: $column, name: $name}';
+  }
+}
+
+@pragma("vm:entry-point")
+class PageEvent {
+  String routeName;
+  String widgetName;
+  String fileName;
+
+  PageEvent({this.routeName, this.widgetName, this.fileName});
+
+  @override
+  String toString() {
+    return 'PageEvent{routeName: $routeName, widgetName: $widgetName, fileName: $fileName}';
   }
 }
 
