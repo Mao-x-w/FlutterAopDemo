@@ -4,3 +4,4 @@
 Snapshot/*
 *.iml
 .fvm/*
+pubspec.lock
