@@ -5,3 +5,4 @@ Snapshot/*
 *.iml
 .fvm/*
 pubspec.lock
+lib/src/flutter_frontend_server/frontend_server.dart.snapshot

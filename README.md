@@ -6,6 +6,49 @@
 
 使用的是flutter 1.22.5，其他版本没有做兼容
 
+## 运行项目
+熟悉阿里开源项目aspectd如何运行可略过
+
+1. 确保Flutter SDK是1.22.5
+2. 找到Flutter SDK，执行以下命令
+
+```
+git apply --3way xxx/xxx/aspectd/0001-aspectd.patch
+```
+0001-aspectd.patch该文件在当前项目下
+
+3. 删除原有flutter sdk目录下的缓存文件
+
+```
+rm bin/cache/flutter_tools.stamp
+```
+
+4. 重新构建新的flutter编译工具
+
+```
+flutter doctor -v
+```
+
+5. 下载Dart SDK源码，并切到1.22.5分支，并在项目中进行指定：
+
+```
+dependency_overrides:
+  kernel:
+    path: /Users/wenxuemao/custom/flutter/xianyuDartSdk/sdk/pkg/kernel
+```
+下载不下来的可以参考文章：https://www.jianshu.com/p/420fcfeecbb4
+
+6. 在aspectd项目下执行pub get
+7. 切到aspectd_impl目录下执行pub get
+8. 切到example目录下执行pub get
+9. 在example目录下运行项目
+
+```
+flutter run --debug --verbose
+```
+
+
+
 ## 全埋点
 在flutter页面点击的时候获取到我们点击的内容
 
