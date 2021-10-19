@@ -24,7 +24,6 @@ class HookImpl {
   var elementInfoMap = <String, Object>{};
   bool searchStop = false;
 
-  Element elementTypeElement;
   var elementPathList = <Element>[];
 
   List<String> contentList = [];
@@ -40,6 +39,7 @@ class HookImpl {
 
   void hookHitTest(HitTestEntry entry, PointerEvent event) {
     hitTestEntry = entry;
+    CustomLog.d("hookHitTest:::"+hitTestEntry.target.toString());
   }
 
   void hookClick(String eventName) {
@@ -62,7 +62,6 @@ class HookImpl {
   void _resetValues() {
     initValues();
     contentList.clear();
-    elementTypeElement = null;
   }
 
   void _getElementContent() {
@@ -122,10 +121,12 @@ class HookImpl {
 
   bool _shouldAddToPath(Element element) {
     Widget widget = element.widget;
+    // CustomLog.d("_shouldAddToPath:::"+widget.toStringShort());
     if (widget is _CustomHasCreationLocation) {
       _CustomHasCreationLocation creationLocation =
           widget as _CustomHasCreationLocation;
       if (creationLocation._customLocation != null) {
+        // CustomLog.d(creationLocation._customLocation.toString());
         return creationLocation._customLocation.isProjectRoot();
       }
     }
@@ -186,13 +187,8 @@ class HookImpl {
       Widget widget = element.widget;
       elementTypeResult = widget.runtimeType.toString();
       if (elementTypeResult != null) {
-        elementTypeElement = element;
         break;
       }
-    }
-    if (elementTypeResult == null) {
-      elementTypeResult = elementPathList[0].widget.runtimeType.toString();
-      elementTypeElement = elementPathList[0];
     }
 
     elementInfoMap[r"$element_type"] = elementTypeResult;
