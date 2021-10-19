@@ -346,6 +346,8 @@ class WidgetCreatorTracker {
           }
 
           if (importUri.path.contains('hook_impl.dart')) {
+            print("TrackWidgetLocation:::importUri:::"+importUri.path);
+            print("TrackWidgetLocation:::library.classes:::"+library.classes.toString());
             for (Class class_ in library.classes) {
               if (class_.name == '_CustomHasCreationLocation') {
                 _hasCreationLocationClass = class_;
