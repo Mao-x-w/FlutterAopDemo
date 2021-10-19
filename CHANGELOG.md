@@ -63,3 +63,15 @@
 
 ## [1.0.4]
 * Compative with stable/v1.22.5
+
+## [1.0.5]
+* Compative with stable/v1.22.6
+
+## [1.0.6]
+* Compative with stable/v2.0.0
+
+## [1.1.0]
+* Compative with stable/v2.2.2
+
+## [1.1.1]
+* Compative with stable/v2.2.3
