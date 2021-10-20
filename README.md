@@ -4,12 +4,12 @@
 其中全埋点是参考大佬文章实现的
 [Flutter之全埋点思考与实现](https://juejin.cn/post/6892371163859976199#heading-3)
 
-使用的是flutter 1.22.5，其他版本没有做兼容
+目前已适配的版本是1.22.5和2.2.3
 
 ## 运行项目
 熟悉阿里开源项目aspectd如何运行可略过
 
-1. 确保Flutter SDK是1.22.5
+1. 确保Flutter SDK是1.22.5或2.2.3
 2. 找到Flutter SDK，执行以下命令
 
 ```
@@ -29,7 +29,7 @@ rm bin/cache/flutter_tools.stamp
 flutter doctor -v
 ```
 
-5. 下载Dart SDK源码，并切到1.22.5分支，并在项目中进行指定：
+5. 下载Dart SDK源码，并切到1.22.5或2.2.3分支，并在项目中进行指定：
 
 ```
 dependency_overrides:

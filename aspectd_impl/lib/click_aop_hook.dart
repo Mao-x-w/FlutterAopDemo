@@ -18,7 +18,12 @@ class ClickAopHook {
     PointerEvent pointEvent = pointCut.positionalParams[0];
     HitTestResult hitTestResult = pointCut.positionalParams[1];
     if (pointEvent is PointerUpEvent) {
-      HookImpl.getInstance().hookHitTest(hitTestResult.path.first, pointEvent);
+      for(HitTestEntry hitTestEntry in hitTestResult.path){
+        if(hitTestEntry.target is RenderObject){
+          HookImpl.getInstance().hookHitTest(hitTestEntry, pointEvent);
+          break;
+        }
+      }
     }
     return pointCut.proceed();
   }
